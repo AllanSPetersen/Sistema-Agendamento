@@ -1,13 +1,13 @@
 import React from 'react'
 import * as S from './style'
 import { ScheduleFormProps } from '@/components/Forms/AgendamentoForm/types'
-import PetModalDetails from '../../Modals/PetModalDetails'
+import DoctorModalDetails from '../../Modals/DoctorModalDetails'
 
 const AgendList = ({ ...props }: ScheduleFormProps) => {
   const [isDoctorModalOpen, setDoctorModalOpen] = React.useState(false)
   return (
     <>
-      {isDoctorModalOpen && <PetModalDetails setDoctorModalOpen={setDoctorModalOpen} doctorProps={props} />}
+      {isDoctorModalOpen && <DoctorModalDetails setDoctorModalOpen={setDoctorModalOpen} doctorProps={props} />}
       <S.Container onClick={() => setDoctorModalOpen(true)}>
         <S.ContentList>
           <S.List className='animation-container'>
