@@ -10,7 +10,7 @@ export type ScheduleFormProps = {
     canceled_date: string,
     status: boolean,
     created_at: Date,
-    sintomas: string | boolean | Date | undefined,
+    sintomas: string,
     is_client: boolean;
 };
 
