@@ -1,6 +1,5 @@
 import React from 'react'
 import * as S from './style'
-import Image from 'next/image'
 import moment from 'moment'
 import { toast } from 'react-toastify'
 import { DoctorModalProps } from './types'
@@ -9,7 +8,6 @@ import { useTranslation } from "react-i18next";
 import { ListContext } from '@/contexts/listContext'
 import { AuthContext } from '@/contexts/authContext'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
-import { catsBreedsReferences, dogsBreedsReferences } from '@/services/api'
 import { DoctorFetchProps, ScheduleFormProps } from '@/components/Forms/AgendamentoForm/types'
 import { deletingScheduleFormToDatabase, updatingScheduleFormToDatabase } from '@/services/schedules'
 
@@ -58,18 +56,6 @@ const DoctorModalDetails = ({ setDoctorModalOpen, doctorProps }: DoctorModalProp
             toast.error(error.toString())
         }
         loadSchedules()
-    }
-
-    const loadBreedsReferences = async (specie: string) => {
-        const { response } = specie === 'dog'
-            ? await dogsBreedsReferences()
-            : await catsBreedsReferences()
-
-        if (specie === 'dog') {
-            setdocRef(response)
-        } else {
-            setdocRef(response)
-        }
     }
 
     return (
