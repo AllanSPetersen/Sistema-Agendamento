@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build", 
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@prisma/client": "^4.11.0",
+    "@prisma/client": "^6.0.1",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
@@ -41,6 +41,6 @@
     "@types/react-datepicker": "^4.10.0",
     "@types/react-input-mask": "^3.0.2",
     "jsonwebtoken": "^9.0.0",
-    "prisma": "^4.16.2"
+    "prisma": "^6.0.1"
   }
 }
